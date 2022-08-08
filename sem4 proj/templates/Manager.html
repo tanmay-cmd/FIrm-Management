@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>The Manager Module</title>
+
+    <style type="text/css">
+      
+      #logo {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width:153px; 
+      height:110px; 
+      margin-left: 20px;
+  }
+
+    #leftnavbtn {
+    width: 240px;
+    color: white;
+    margin-left: -20px;
+    margin-top: 8px;
+    background-color: #d966ff;
+  }
+
+    .page-content {
+      width: calc(100% - 240px);
+      margin-left: 240px;
+      transition: all 0.4s;
+  }
+
+    /*body {
+      background: #599fd9;
+      background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+      background: linear-gradient(to right, #599fd9, #c2e59c);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: url("images/logox-removebg-preview.png");
+      background-repeat: no-repeat; 
+      background-size: 84% 73%;
+      background-position: 99% 72%;
+  }*/
+
+  body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        /*linear-gradient(to right, #599fd9, #c2e59c),*/
+        url("https://cdn.pixabay.com/photo/2016/10/15/02/19/purple-1741713_1280.jpg");
+      background-repeat: no-repeat; 
+      background-size: 84% 73%;
+      background-position: 99% 72%;
+  }
+
+    .botnavbar {
+      overflow: hidden;
+    position: fixed;
+      bottom: 0;
+      width: 100%;
+  }
+
+    .botnavbar a {
+      float: right;
+      display: block;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+  }
+
+    .botnavbar a:hover {
+      background: #ffffff;
+      color: black;
+  }
+
+    li {
+      width: 8em;
+      color: white;
+      font-size: 17px;
+      border-left: 0.2em solid;
+      position: relative;
+      cursor: pointer;
+  }
+
+    li::before, li::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      border-left: inherit;
+      z-index: -1;
+  }
+
+    li::before {
+      height: 80%;
+      top: 10%;
+      left: calc(-0.15em - 0.08em * 10);
+      filter: brightness(0.8);
+  }
+
+    li::after {
+      height: 60%;
+      top: 20%;
+      left: calc(-0.15em * 2 - 0.08em * 3);
+      filter: brightness(0.6);
+  }
+
+    li span {
+      position: relative;
+      height: 120%;
+      top: -10%;
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      margin-left: 40px;
+      font-family: sans-serif;
+      text-transform: capitalize;
+      transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+      transition: 0.2s;
+  }
+
+    li:hover span {
+      transform: translateX(0.15em);
+  }
+
+  </style>
+
+    <header>
+      
+      <div class="mt-1 mb-5" style="overflow: hidden; position: fixed; width: 100%; z-index: 1;">
+            
+            <nav class="navbar navbar-inverse bg-dark">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ user_image1 }}" class="card-img" alt="GBUM logo" id="logo">
+                    </a>
+                </div>
+
+                <div style="color: #ffffff; text-decoration: underline overline; margin-top: -45px; margin-left: 370px">
+                  <h1>THE MANAGER MODULE</h1>
+                </div>
+                <div style="margin-top: 60px; margin-left: 80px">
+                <form class="form-inline">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 40vh; font-style: italic;" disabled="1">
+                    <button class="btn btn-outline-success" style="margin-left: 5px;" type="submit" disabled="1"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+                <div style="margin-right: -25px; margin-bottom: -60px">
+                    <button onclick="window.location.href ='logout';" type="button" class="btn btn-outline-light"><i>Logout</i></button>
+        
+                </div>
+            </div>
+            </nav>
+
+        </div>
+
+    </header>
+
+</head>
+
+
+
+  <div class="bg-dark" style="width: 240px; height: 80vh; margin-top: 142px; position: fixed;">            <!-- OPTION 2:position: absolute; -->
+    <ul style="list-style-type: none; color: #ffffff">
+        <button onclick="window.location.href ='emp_details';" type="button" class="btn" id="leftnavbtn" data-target="" ><li><span>Employees</span></li></button>
+        <button onclick="window.location.href ='sales_details';" type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Sales</span></li></button>
+        <button onclick="window.location.href ='cus_details';"  type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Customers</span></li></button>
+        <button onclick="window.location.href ='order_details';" type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Orders</span></li></button>
+        <button onclick="window.location.href ='items_details';" type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Items</span></li></button>
+        <button onclick="window.location.href ='att_details';" type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Attendance</span></li></button>
+        <button onclick="window.location.href ='payrolls_details';" type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Payrolls</span></li></button>
+        <button onclick="window.location.href ='pro_details';" type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Production</span></li></button>
+        <button onclick="window.location.href ='pur_details';" type="button" class="btn" id="leftnavbtn" data-target=""><li><span>Purchase</span></li></button>
+    </ul>
+  </div>
+
+  <body>
+    
+    <div class="page-content p-5" style="margin-top: 105px; margin-bottom: 52px; overflow-x: auto;">
+
+      <!-- <h1>Hi</h1>
+
+      <h2 class="display-4 text-white">Bootstrap vertical nav</h2>
+        <p class="lead text-white mb-0">Build a fixed sidebar using Bootstrap 4 vertical navigation and media objects.</p>
+        <p class="lead text-white">Snippet by <a href="https://bootstrapious.com/snippets" class="text-white">
+            <u>Bootstrapious</u></a>
+        </p>
+        <div class="separator page-content"></div>
+        <div class="row text-white">
+          <div class="col-lg-7">
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut   enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut   enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor.</p>
+              <div class="bg-white p-5 rounded my-5 shadow-sm">
+                <p class="lead font-italic mb-0 text-muted">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor.</p>
+          </div>
+          <div class="col-lg-5">
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+          </div>
+        </div> -->
+    </div>
+  </body>
+
+  <div class="botnavbar bg-dark">
+      <a class="disabled" href="" onclick="openNavEmp()" >&#9776;New Entry</a>
+      <a class="disabled" href="" onclick="openNavDel()">&#x2718;Delete Entry</a>
+      <a class="disabled" href="" onclick="openNavUpd()">&#9998;Update Entry</a>
+  </div>
+
+</html>

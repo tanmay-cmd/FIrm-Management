@@ -1,0 +1,27 @@
+<table border = 1>
+	<tr>
+ <th>Order id</th>
+ <th>Customer id</th>
+ <th>Advance</th>
+ <!-- <th>Story </th> -->
+ <th>Status</th>
+ <th>Expected delievry date</th>
+ <th>Placement date</th>
+ <th>Item id</th>
+ <th>Quantity</th>
+ 
+ </tr>
+  {% for user in userDetails %}
+  <tr>
+    <td> {{user[0]}} </td>
+    <td> {{user[1]}} </td>
+    <td> {{user[2]}} </td>
+    <td> {{user[3]}} </td>
+    <td> {{user[4]}} </td>
+    <td> {{user[5]}} </td>
+    <td> {{user[6]}} </td>
+    <td> {{user[7]}} </td>
+    <!-- <td> {{user[8]}} </td> -->
+  </tr>
+  {% endfor %}
+</table>

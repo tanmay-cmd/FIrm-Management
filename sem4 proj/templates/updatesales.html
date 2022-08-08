@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Sales Details</title>
+
+  <script>
+    var userInput=0;
+    var emp_id=0;
+
+    function openNavUpd1() {
+      document.getElementById("UpdEntry1").style.width = "100%";
+    }
+
+    function closeNavUpd1() {
+
+      document.getElementById("UpdEntry1").style.width = "0%";
+      // openNavUpd2()
+    }
+
+    function openNavUpd2() {
+      document.getElementById("UpdEntry2").style.width = "100%";
+    }
+
+    function closeNavUpd2() {
+      document.getElementById("UpdEntry2").style.width = "0%";
+    }
+
+    function getInput(userInput) {
+    emp_id=parseInt(userInput);
+    console.log(emp_id)
+    }
+
+    function myFunction() {
+    return emp_id;
+    }
+  </script>
+
+    <style type="text/css">
+      
+      #logo {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width:153px; 
+      height:110px; 
+      margin-left: 20px;
+  }
+
+    #leftnavbtn {
+    width: 240px;
+    color: white;
+    margin-left: -20px;
+    margin-top: 8px;
+    background-color: #d966ff;
+  }
+
+    .page-content {
+      width: calc(100% - 240px);
+      margin-left: 240px;
+      transition: all 0.4s;
+  }
+
+    body {
+      background: #599fd9;
+      background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+      background: linear-gradient(to right, #599fd9, #c2e59c);
+      min-height: 100vh;
+      overflow-x: hidden;
+  }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+
+    tr:hover {
+    background-color:#f5f5f5;
+  }
+
+    .botnavbar {
+      overflow: hidden;
+    position: fixed;
+      bottom: 0;
+      width: 100%;
+  }
+
+    .botnavbar a {
+      float: right;
+      display: block;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+  }
+
+    .botnavbar a:hover {
+      background: #ffffff;
+      color: black;
+  }
+
+    .overlayUpd1 {
+    height: 30%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+    .overlayUpd2 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.2s;
+  }
+
+    .overlay-content {
+      position: relative;
+      text-align: center;
+      margin-top: 30px;
+  }
+
+    li {
+      width: 8em;
+      color: white;
+      font-size: 17px;
+      border-left: 0.2em solid;
+      position: relative;
+      cursor: pointer;
+  }
+
+    li::before, li::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      border-left: inherit;
+      z-index: -1;
+  }
+
+    li::before {
+      height: 80%;
+      top: 10%;
+      left: calc(-0.15em - 0.08em * 10);
+      filter: brightness(0.8);
+  }
+
+    li::after {
+      height: 60%;
+      top: 20%;
+      left: calc(-0.15em * 2 - 0.08em * 3);
+      filter: brightness(0.6);
+  }
+
+    li span {
+      position: relative;
+      height: 120%;
+      top: -10%;
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      margin-left: 40px;
+      font-family: sans-serif;
+      text-transform: capitalize;
+      transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+      transition: 0.2s;
+  }
+
+    li:hover span {
+      transform: translateX(0.15em);
+  }
+
+  </style>
+
+  <header>
+      
+    <div class="mt-0 mb-5" style="overflow: hidden; position: fixed; width: 100%; z-index: 1;">
+            
+      <nav class="navbar navbar-inverse bg-dark">
+        <div class="container-fluid">
+          <div class="navbar-header" style="margin-top: 5px; margin-bottom: 5px;">
+            <img onclick="window.location.href ='dashboard';" src="{{ user_image1 }}" class="card-img" alt="GBUM logo" id="logo">
+          </div>
+
+                <div style="color: #ffffff; text-decoration: underline overline; margin-top: -45px; margin-left: 370px">
+                  <h1>THE MANAGER MODULE</h1>
+                </div>
+                <div style="margin-top: 60px; margin-left: 80px">
+                <form action="/exist_sales" method="POST" class="form-inline">
+                    <input class="form-control" type="text" name="userInput" placeholder="Search" aria-label="Search" style="width: 40vh; font-style: italic;" disabled="1">
+                    <button class="btn btn-outline-success" style="margin-left: 5px;" type="submit"disabled="1"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+                <div style="margin-right: -25px; margin-bottom: -60px">
+                    <button onclick="window.location.href ='logout';" type="button" class="btn btn-outline-light"><i>Logout</i></button>
+        
+                </div>
+            </div>
+            </nav>
+
+        </div>
+
+    </header>
+
+</head>
+
+
+
+  <div class="bg-dark" style="width: 240px; height: 80vh; margin-top: 137px; position: fixed;">
+    <ul style="list-style-type: none; color: #ffffff">
+        <button onclick="window.location.href ='sales_details';" type="button" class="btn" id="leftnavbtn" style="background-color: #FFD700; width: 265px">Sales</button>
+        <button onclick="window.location.href ='emp_details';" type="button" class="btn" id="leftnavbtn"><li><span>Employees</span></li></button>
+        <button onclick="window.location.href ='cus_details';"  type="button" class="btn" id="leftnavbtn"><li><span>Customers</span></li></button>
+        <button onclick="window.location.href ='order_details';" type="button" class="btn" id="leftnavbtn"><li><span>Orders</span></li></button>
+        <button onclick="window.location.href ='items_details';" type="button" class="btn" id="leftnavbtn"><li><span>Items</span></li></button>
+        <button onclick="window.location.href ='att_details';" type="button" class="btn" id="leftnavbtn"><li><span>Attendance</span></li></button>
+        <button onclick="window.location.href ='payrolls_details';" type="button" class="btn" id="leftnavbtn"><li><span>Payrolls</span></li></button>
+        <button onclick="window.location.href ='pro_details';" type="button" class="btn" id="leftnavbtn"><li><span>Production</span></li></button>
+        <button onclick="window.location.href ='pur_details';" type="button" class="btn" id="leftnavbtn"><li><span>Purchase</span></li></button>
+    </ul>
+  </div>
+
+  <body>
+    
+    <div class="page-content p-5" style="margin-top: 105px; margin-bottom: 52px; overflow-x: auto;">
+
+      <table>
+        <tr>
+          <th>Sales ID</th>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Sold To</th>
+          <th>Transporter</th>
+          <th>Vehicle No.</th>
+          <th>Billing Amount</th>
+          <!-- <th>Payment Status</th> -->
+          <!-- <th>Pending Payment</th> -->
+          <!-- <th>Payment ID</th> -->
+        </tr>
+        {% for user in userDetails %}
+  
+        <tr>
+          <td> {{user[0]}} </td>
+          <td> {{user[1]}} </td>
+          <td> {{user[8]}} </td>
+          <td> {{user[3]}} </td>
+          <td> {{user[4]}} </td>
+          <td> {{user[5]}} </td>
+          <td> {{user[6]}} </td>
+          <!-- <td> {{user[7]}} </td> -->
+          <!-- <td> {{user[9]}} </td> -->
+          <!-- <td> {{user[11]}} </td> -->
+        </tr>
+        {% endfor %}
+      </table>
+
+    </div>
+
+  </body>
+
+  <div class="botnavbar bg-dark">
+      <a href="#UpdateEntry" onclick="openNavUpd2()">&#9998;Update Entry</a>
+  </div>
+
+  <div id="UpdEntry1" class="overlayUpd1">
+    <div class="overlay-content">
+      <div class="modal-header" style="margin-top: -35px; margin-left: 15px;">
+          <h4 class="modal-title" style="color: #ffffff">Update Sale Entry</h4>
+          <button type="button" class="close" onclick="closeNavUpd1()" style="margin-right: 10px; font-size: 30px;">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="margin-top: 0px;">
+         <form action="/exist_sales" method="POST">   
+          <div class="form-group form-inline">
+            <label for="delempid" style="color: #ffffff;">Sales ID</label>
+            <input type="number" class="form-control" name="userInput" id="userInput" placeholder="Enter sales ID" style="font-style:italic; width: 25rem; margin-left: 10px;" id="updsaleid">
+          </div>
+                    
+          <button type="submit" class="btn btn-outline-light" onclick="closeNavUpd1()" style="width: 170px; margin-bottom: -70px; margin-right: -959px;" >Find Entry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="UpdEntry2" class="overlayUpd2">
+    <div class="overlay-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="color: #ffffff">Update Sale Entry</h4>
+        <button type="button" class="close" onclick="closeNavUpd2()" style="margin-right: 10px; font-size: 30px;">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="margin-top: 40px;">
+        <form method="POST" action="/upd_sales">
+                        
+            <div class="form-group form-inline">
+              <label for="date" style="color: #ffffff;">Date</label>
+              <input type="Date" class="form-control" name="date" value="{{userDetails[0][2]}}" style="font-style:italic; width: 25rem; margin-left: 107px;" id="date">
+            </div>
+
+            <div class="form-inline mt-4">
+              <div class="form-group form-inline">
+                <label for="transName" style="color: #ffffff;">Transporter Name</label>
+                <input type="text" class="form-control" name="trans_name" value="{{userDetails[0][4]}}" placeholder="Enter transporter name" style="font-style:italic; width: 25rem; margin-left: 8px;" id="transName">
+              </div>
+          
+              <div class="form-group form-inline" style="margin-left: 30px;">
+                <label for="vehicleNo" style="color: #ffffff;">Vehicle Number</label>
+                <input type="text" class="form-control" name="vehicle_no" value="{{userDetails[0][5]}}" placeholder="Enter vehicle number" style="font-style:italic; width: 25rem; margin-left: 13px;" id="vehicleNo">
+              </div>
+            </div>
+
+            <div class="form-group form-inline mt-4">
+              <label for="billAmt" style="color: #ffffff;">Billing Amount</label>
+              <input type="Number" class="form-control" name="bill" value="{{userDetails[0][6]}}" placeholder="Enter billing amount" style="font-style:italic; width: 25rem; margin-left: 34px;" id="billAmt">
+            </div>
+
+            <!-- <div class="form-group form-inline mt-4">
+              <label for="payStatus" style="color: #ffffff;">Payment Status</label>
+              <select id="payStatus" style="margin-left: 24px; border-radius: 5px; width: 200px; height: 35px; font-style: italic;">
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div> -->
+            <input type="hidden" id="sales_id" name="sales_id" value="{{userDetails[0][0]}}"> 
+          <button type="submit" class="btn btn-outline-light" style="width: 170px; margin-bottom: -150px; margin-right: -1100px;" >Update</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+{% for mesg in get_flashed_messages() %}
+  <script type="text/javascript">window.setTimeout("document.getElementById('successMessage').style.display='none';", 2000); </script>
+
+<div id="successMessage"> <h3 style="text-align: center; color: #ffffff; margin-top: 1px">{{ mesg }}</h3>
+      {% endfor %}
+</html>

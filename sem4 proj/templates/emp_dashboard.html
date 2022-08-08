@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Personal Details</title>
+
+    <style type="text/css">
+      
+      #logo {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width:153px; 
+      height:110px; 
+      margin-left: 20px;
+  }
+
+    #leftnavbtn {
+    width: 180px;
+      height: 80px;
+    color: red;
+    margin-left: -10px;
+      margin-right: auto;
+    margin-top: 8px;
+  }
+
+    .page-content {
+      width: calc(100% - 240px);
+      margin-left: 240px;
+      transition: all 0.4s;
+  }
+
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-image: url("https://cdn.pixabay.com/photo/2016/10/15/02/19/purple-1741713_1280.jpg");
+        background-repeat: no-repeat; 
+        background-size: 83.8% 76%;
+        background-position: 98% 81.5%;
+    }
+
+    .botnavbar {
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+  }
+
+    .botnavbar {
+      float: right;
+      display: block;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+  }
+
+      .tttbtn1 {
+      border-color: #3498db;
+      color: #fff;
+      box-shadow: 0 0 40px 40px #ffffff inset, 0 0 0 0 #ffffff;
+        -webkit-transition: all 150ms ease-in-out;
+      transition: all 300ms ease-in-out;
+  }
+  
+    .tttbtn1:hover {
+      box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+      color: white;
+  }
+
+    .tttbtn {
+      box-sizing: border-box;
+      background-color: transparent;
+      border: 2px solid #e74c3c;
+      border-radius: 0.6em;
+      color: #white;
+      cursor: pointer;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+        -webkit-align-self: center;
+          -ms-flex-item-align: center;
+         align-self: center;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1;
+      margin: 20px;
+      padding: 1.2em 2.8em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+  }
+
+    .tttbtn:hover, .tttbtn:focus {
+      color: #fff;
+      outline: 0;
+  }
+
+    span {
+      color: black;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+  }
+
+  </style>
+  
+  <script >
+     function viewPassword()
+    {
+        var passwordInput = document.getElementById('password-field');
+        var passStatus = document.getElementById('pass-status');
+ 
+        if (passwordInput.type == 'password'){
+        passwordInput.type='text';
+        passStatus.className='fa fa-eye-slash';
+        }
+        else{
+          passwordInput.type='password';
+          passStatus.className='fa fa-eye';
+        }
+    }
+  </script>
+    
+    <header>
+      
+      <div class="mt-0 mb-5" style="overflow: hidden; position: fixed; width: 100%; z-index: 1;">
+            
+            <nav class="navbar navbar-inverse bg-dark">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ user_image1 }}" class="card-img" alt="GBUM logo" id="logo">
+                    </a>
+                </div>
+
+                <div style="color: #ffffff; text-decoration: underline overline; margin-top: -45px; margin-left: 370px">
+                  <h1>THE EMPLOYEE MODULE</h1>
+                </div>
+                <div style="margin-top: 60px; margin-left: 80px">
+                <form class="form-inline">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 40vh; font-style: italic;">
+                    <button class="btn btn-outline-success" style="margin-left: 5px;" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+                <div style="margin-right: -25px; margin-bottom: -60px">
+                    <button onclick="window.location.href ='http://localhost:5000/logout';" type="button" class="btn btn-outline-light"><i>Logout</i></button>
+        
+                </div>
+            </div>
+            </nav>
+
+        </div>
+
+    </header>
+
+</head>
+
+
+
+  <div class="" style="background-color: #1f50a1; width: 240px; height: 80vh; margin-top: 142px; position: fixed; z-index: 1;">            <!-- OPTION 2:position: absolute; -->
+    <ul style="list-style-type: none; color: #ffffff; margin-top: 30%;">
+        <button type="button" class="tttbtn tttbtn1" id="leftnavbtn" data-target=""><span>Personal Details</span></button>
+        <button type="button" class="tttbtn tttbtn1" id="leftnavbtn" data-target=""><span>Attendance</span></button>
+        <button type="button" class="tttbtn tttbtn1" id="leftnavbtn" data-target=""><span>Payrolls</span></button>
+    </ul>
+  </div>
+
+  <body>
+    
+    <div class="page-content p-5" style="margin-top: 105px; margin-bottom: 52px; overflow-x: auto;">
+
+      <h4 style="color: white; font-size: 40px;">Personal Details</h4>
+      <hr>
+
+      <div class="modal-body" style="margin-top: 40px;">
+        <form>
+                        
+          <div class="form-inline">
+            <div class="form-group form-inline">
+              <label for="firstname" style="color: #ffffff;">First Name</label>
+              <input type="text" name="first_name" class="form-control" value="{{userDetails[0][2]}}" style="font-style:italic; width: 25rem; margin-left: 10px;" id="fname" disabled="1">
+            </div>
+            <div class="form-group form-inline" style="margin-left: 35px;">
+              <label for="lastname" style="color: #ffffff;">Last Name</label>
+              <input type="text" name="last_name" class="form-control" value="{{userDetails[0][3]}}" style="font-style:italic; width: 25rem; margin-left: 10px;" id="lname" disabled="1">
+            </div>
+          </div>
+
+          <div class="form-inline mt-4" >
+            <div class="form-group form-inline">
+              <label for="aadhar" style="color: #ffffff;">Aadhar No.</label>
+              <input type="text" name="Aadhar" class="form-control" value="{{userDetails[0][1]}}" style="font-style:italic; width: 20rem; margin-left: 8px;" id="aadhar" disabled="1">
+            </div>
+            <div class="form-group form-inline" style="margin-left: 35px;">
+              <label for="job" style="color: #ffffff;">Job</label>
+              <input type="text" name="job" class="form-control" value="{{userDetails[0][5]}}" style="font-style:italic; width: 15rem; margin-left: 10px;" id="job" disabled="1">
+            </div>
+            <div class="form-group form-inline" style="margin-left: 20px;">
+              <label for="joiningdate" style="color: #ffffff;">Joining Date</label>
+              <input type="date" name="jod" class="form-control" value="{{userDetails[0][4]}}" style="font-style:italic; width: 20rem; margin-left: 10px;" id="joiningdate" disabled="1">
+            </div>
+          </div>
+
+          <div class="form-inline mt-4" >
+            <div class="form-group form-inline">
+              <label for="mobileno" style="color: #ffffff;">Mobile No.</label>
+              <input type="text" name="phone" class="form-control" value="{{userDetails[0][12]}}" style="font-style:italic; width: 15rem; margin-left: 13px;" id="mobileno" disabled="1">
+            </div>
+            <div class="form-group form-inline" style="margin-left: 35px;">
+              <label for="addphone" style="color: #ffffff;">Add. Phone No.</label>
+              <input type="text" name="sec_phone"  class="form-control" value="{{userDetails[0][13]}}" style="font-style:italic; width: 15rem; margin-left: 10px;" id="addphone" disabled="1">
+            </div>
+            <div class="form-group form-inline" style="margin-left: 35px;">
+              <label for="salary" style="color: #ffffff;">Salary</label>
+              <input type="number" name="salary" class="form-control" value="{{userDetails[0][8]}}" style="font-style:italic; width: 15rem; margin-left: 10px;" id="salary" disabled="1">
+            </div>
+          </div>
+
+          <div class="form-inline mt-4" >
+            <div class="form-group form-inline">
+              <label for="password" style="color: #ffffff;">Password</label>
+              <input type="password" name="password" id="password-field" class="form-control" value="{{userDetails[0][10]}}" style="font-style:italic; width: 25rem; margin-left: 22px;"  disabled="1">
+              <i id="pass-status" class="fa fa-eye" style="cursor: pointer; margin-left: 8px; color: white; font-size: 27px;" aria-hidden="true" onClick="viewPassword()"></i>
+            </div>
+            <div class="form-group form-inline" style="margin-left: 35px;">
+              <label for="DOB" style="color: #ffffff;">Date of Birth</label>
+              <input type="Date" name="dob" class="form-control" value="{{userDetails[0][6]}}" style="font-style:italic; width: 25rem; margin-left: 10px;" id="DOB" disabled="1">
+            </div>
+          </div>
+
+          <div class="form-inline mt-4" >
+            <div class="form-group form-inline">
+              <label for="address" style="color: #ffffff;">Address</label>
+              <input type="text" name="state" class="form-control" value="{{userDetails[0][11]}}" style="font-style:italic; width: 30rem; margin-left: 32px;" id="address" disabled="1">
+            </div>
+            <div class="form-group form-inline" style="margin-left: 35px;">
+              <label for="fathusname" style="color: #ffffff;">Father's/Husband's Name</label>
+              <input  type="text" name="father" class="form-control" value="{{userDetails[0][7]}}" style="font-style:italic; width: 25rem; margin-left: 10px;" id="fathusname" disabled="1">
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </body>
+
+  <div class="botnavbar" style="background-color: #1f50a1;">
+  </div>
+
+</html>
